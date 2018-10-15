@@ -7,12 +7,12 @@ def create_project_hash
   projects = {}
   kickstarter.css('li.project.grid_4').each { |project|
     title = project.css('h2.bbcard_name strong a').text.to_sym
-    projects[title.to_sym] = {
-      :image-link => project.css('div.project-thumbnail a img').attribute('src').value,
-      :description => project.css('p.bbcard_blurb').text,
-      :location => project.css('ul.project-meta span.location-name').first.text,
-      :percent-funded => project.css('ul.project-stats li').first.css('strong').text.chomp('%').to_i,
-    }
+    # projects[title.to_sym] = {
+    #   :image-link => project.css('div.project-thumbnail a img').attribute('src').value,
+    #   :description => project.css('p.bbcard_blurb').text,
+    #   :location => project.css('ul.project-meta span.location-name').first.text,
+    #   :percent-funded => project.css('ul.project-stats li').first.css('strong').text.chomp('%').to_i,
+    # }
   }
   projects
   # for each project:
